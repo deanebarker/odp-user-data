@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { font-family: sans-serif; }
+      input { padding: 5px; margin-bottom: 0.5em; }
+      input[name=address1] { width: 400px; }
+      input[name=address2] { width: 400px; }
+      input[name=state] { width: 50px; }
+      input[name=zip] { width: 80px; }
+      body { padding: 3em; }
+    </style>
+  </head>
+  <body>
+
+    <h1>Your User Profile</h1>
+
+    <p>
+      Email: <strong>{{ Model.Email }}</strong>
+    </p>
+
+    <p>Has your address changed?</p>
+
+    <form method="post">
+      <p>
+
+        <input name="address1" placeholder="Address, Line 1" value="{{ Model.Address1 }}"/>
+        <br/>
+        <input name="address2" placeholder="Address, Line 2" value="{{ Model.Address2 }}"/>
+        <br/>
+        <input name="city" placeholder="City" value="{{ Model.City }}"/>
+        <input name="state" placeholder="State" value="{{ Model.State }}"/>
+        <br/>
+        <input name="zip" placeholder="Zip" value="{{ Model.Zip }}"/>
+
+      </p>
+      <p>
+        <input type="submit" value="Update"/>
+      </p>
+    </form>
+  </body>
+</html>
