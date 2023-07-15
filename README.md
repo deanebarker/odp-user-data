@@ -18,7 +18,7 @@ OptiDataProfile.ApiKey = "whatever";
 
 ## To Use (read)
 
-Simple instantiate the object with the identifier. For example, if we were using email:
+Instantiate the `OptiDataProfile` object with the identifier. For example, if we were using email:
 
 ```
 var profile = new OptiDataProfile("deane@deanebarker.net");
@@ -26,7 +26,9 @@ var profile = new OptiDataProfile("deane@deanebarker.net");
 
 If a customer object doesn't exist in ODP for that key, it will be created.
 
-The object is created in C#, all the profile data is cached in a local dictionary, under the `Attributes` property.
+The object is created in C#, all the profile data is cached in a local dictionary, under the `Attributes` property. They are stored as `object` values.
+
+Some convenience accessors are also provided.
 
 ```
 var address = profile.GetValue("address"); // Returns an object
