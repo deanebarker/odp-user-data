@@ -14,7 +14,7 @@ namespace Alloy.Liquid.Controllers
             _getHttpContext = getHttpContext;
 
             OptiDataProfile.KeyField = "email";
-            OptiDataProfile.ApiKey = "W4WzcEs-ABgXorzY7h1LCQ.aqx2ho-xztHtfG0A0McOMxA6_AUGUPF09H-aDGLOkzM";
+            OptiDataProfile.ApiKey = "whatever";
 
             OptiDataProfile.IdProvider = () =>
             {
