@@ -140,7 +140,7 @@ namespace DeaneBarker.Optimizely
 			}
         }
 
-		public static OptiDataProfile GetForCurrentUser()
+		public static OptiDataProfile GetCurrentProfile()
 		{
             if (IdProvider == null)
             {

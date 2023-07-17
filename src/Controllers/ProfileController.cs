@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Sockets;
 
-namespace Alloy.Liquid.Controllers
+namespace DeaneBarker.Optimizely.OptiData.Controllers
 {
     [Route("profile")]
     public class ProfileController : Controller
@@ -13,8 +13,9 @@ namespace Alloy.Liquid.Controllers
         {
             _getHttpContext = getHttpContext;
 
-            OptiDataProfile.KeyField = "email";
-            OptiDataProfile.ApiKey = "whatever";
+            // Set these for your own instance
+            // OptiDataProfile.KeyField = "email";
+            // OptiDataProfile.ApiKey = "whatever";
 
             OptiDataProfile.IdProvider = () =>
             {
@@ -38,7 +39,7 @@ namespace Alloy.Liquid.Controllers
                 return View("NotLoggedIn");
             }
 
-            var profile = OptiDataProfile.GetForCurrentUser();
+            var profile = OptiDataProfile.GetCurrentProfile();
             var model = new ProfileViewModel
             {
                 Email = profile.GetString("email"),
@@ -55,7 +56,7 @@ namespace Alloy.Liquid.Controllers
         [HttpPost]
         public RedirectToActionResult Index(IFormCollection form)
         {
-            var profile = OptiDataProfile.GetForCurrentUser();
+            var profile = OptiDataProfile.GetCurrentProfile();
             profile.SetValues(new {
                 street1 = form["address1"].FirstOrDefault(),
                 street2 = form["address2"].FirstOrDefault(),
