@@ -2,6 +2,8 @@
 
 This library (just one class, really) provides a simple C# wrapper around customer objects in Optimizely Data Plaform (ODP), allowing you to use that repository to store user profile and preferences.
 
+Note that you could manage Customer profiles in ODP already, this just provides a C# "link" to get the corresponding profile to the CMS server-side user context.
+
 This allows storage of user preferences and data in ODP, which provides some benefits:
 
 1. It's handy and simple
