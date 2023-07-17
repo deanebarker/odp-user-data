@@ -110,9 +110,9 @@ This method takes no parameters -- the intention is that you would retrieve the 
 Once this method is set, then anywhere in your code, you can call this:
 
 ```
-var profile = OptiDataProfile.GetCurrentUser();
+var profile = OptiDataProfile.GetCurrentProfile();
 ```
 
 (See `ProfileController.cs` for examples of this method.)
 
-That will call the `IdProvider` method internally, and feed the result into the constructor, returning a populated profile. If your `IdProvider` returns `null`, then `GetCurrentUser` will return `null` as well.
+That will call the `IdProvider` method internally, and feed the result into the constructor, returning a populated profile. If your `IdProvider` returns `null`, then `GetCurrentProfile` will return `null` as well.
